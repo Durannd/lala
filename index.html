@@ -1,93 +1,115 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lala</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Área Protegida</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #b44ec8, #c78ffb);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: rgb(252, 179, 255);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0c0e33;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #a03c82;
+    }
+
+    #conteudo {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .sucesso {
+      color: green;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
-   
+  <div class="login-container">
+    <h2>Parada aí, Lalinha!</h2>
+    <input type="password" id="senha" placeholder="Digite a senha" />
+    <button onclick="verificarSenha()">Entrar</button>
+
+    <div id="conteudo">
+      <p class="sucesso">✅ Acesso liberado!</p>
+      <p>Bem-vindo ao conteúdo exclusivo.</p>
+    </div>
+    <div id="errado">
+      <p class="errado"> ❌ Errou, lalinha!</p>
+      <p>Tenta Novamente!</p>
+    </div>
+  </div>
+
+  <script>
+   function verificarSenha() {
+  const senhaCorreta = "1234";
+  const senhaDigitada = document.getElementById("senha").value;
+
+  if (senhaDigitada === senhaCorreta) {
+    document.getElementById("conteudo").style.display = "block";
+
+    setTimeout(function () {
+      window.location.href = "index.html"; // Redireciona após 2 segundos
+    }, 2000);
+  } else {
+    const avisoErro = document.getElementById("errado");
+    avisoErro.style.display = "block";
+
+    // Faz o aviso sumir após 3 segundos (3000 milissegundos)
+    setTimeout(function () {
+      avisoErro.style.display = "none";
+    }, 3000);
+  }
+}
 
 
 
-    <div class="container">
-        <div class="containergeral">
-            <p id="titulo">Querida Lalá!</p>
-            <div class="conteudo">
-                <p>Voce Sabe o quanto que o Kel aqui te ama, não é? É justamente isso que eu quero que você saiba, meu
-                    amor por ti só aumenta e quero sempre poder te fazer feliz com ele.
-                    Você é tudinho pra mim, meu denguinho, meu amorzao, meu tudo! Você é a Balerina Capuccina do meu
-                    Tung Tung Sahur, sabia? Bom, estou deixando aqui algumas das fotinhas
-                    que eu separei pra mostrar o quanto voce é linda e tão especial pra mim. Eu te amo tanto meu amor,
-                    eu queria poder te dar todo o mundo, tudo o que você quiser e muito mais,
-                    mas o que eu tenho é somente um projetinho de html que eu aprendi a fazer na escola, enfim, é uma
-                    coisinha simples mas quero que saiba que eu fiz com muito carinho e amor!
-                </p>
-                <p id="ass1"> Do seu nengue,</p>
-                <p id="ass"> Ricael!</p>
-                <br>
-                <br>
-
-            </div>
-            <div class="containerimagens">
-                <img class="fotolado" src="Assets/sorriso.jpg" alt="sorrisao lala">
-                <p>Bom, tenho que começar por esse sorriso sensacional, não é mesmo? Sinceramente... Sou encantado nesse
-                    sorrisão!</p>
-            </div>
-            <div class="conteudo">
-                <p>Bom, agora, minha querida lalinha, vou te apresentar umas fotitas que, pra ser sincero, são você no
-                    seu
-                    mais puro estado de beleza, essas fotos, naturais, despercebidas e espontâneas significa tudo aquilo
-                    que você é!
-                    você é uma brisa leve num fim de tarde, de um belo dia ensolarado com um sol lindo e bemmmm
-                    amarelinho!
-                </p>
-            </div>
-            <div class="containerimagens">
-                <img class="fotolado" src="Assets/lali1.jpg" alt="">
-                <p>Eu me lembro que nesse dia você tava tão pitchule. Passou a viagem toda mimindo e depois me deu um
-                    denguinho!</p>
-            </div>
-            <div class="containerimagens">
-                <img class="fotolado" src="Assets/safona.jpg" alt="">
-                <p>AGORA TOME ESSA FORRÓZERA ARRETADA!!! RECEBA PAI!!!</p>
-            </div>
-            <div class="containerimagens">
-                <img class="fotolado" src="Assets/praia.jpg" alt="">
-                <p>Assim como todos os dias ao seu lado, esse foi mais um perfeito!
-                    To com saudade de passar um tempinho com vc em berti
-                </p>
-            </div>
-            <div class="conteudo">
-                <img class="fotointeira" src="Assets/fantasia.jpg" alt="">
-                <p>E essa fantasia em?? Você mandou muito meu amor! Nós arrasamos!</p>
-            </div>
-            <div class="conteudo">
-                <img class="fotointeira" src="Assets/vasco.jpg" alt="">
-                <p>Claro que eu não vou perder essa oportunidade né?</p>
-                <p>Vasco é maior que o Corinthians.</p>
-            </div>
-            <div class="containerimagens">
-                <img class="fotolado" src="Assets/lala.jpg" alt="">
-                <p>Eu fico me perguntando se você tem noção da beleza que você tem...</p>
-            </div>
-            <div class="conteudo">
-                <img class="fotointeira" src="Assets/fim.jpg" alt="">
-                <p align="center">Esse dia foi incrivel!</p>
-                <p>Quero que todos os nosso dias tenham essa energia! Eu to com você pra sempre, na felicidade e na tristeza, na amizade e na briga, na saúde e na doença!</p>
-                <br>
-                <p>Você foi a melhor coisa que me aconteceu, meu amor, muito obrigado por estar do meu lado, quero passar o resto da minha vida ao seu lado e compartilhar 
-                    momentos incríveis!</p>
-                    <p id="fim">Feliz 1 ano e 2 meses!</p>
-            </div>
-
-
-        </div>
-
-
+  </script>
 </body>
-
 </html>
